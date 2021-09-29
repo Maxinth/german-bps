@@ -1,9 +1,8 @@
 import SpeedIcon from "@material-ui/icons/Speed";
-import AssessmentIcon from "@material-ui/icons/Assessment";
-import PeopleIcon from "@material-ui/icons/People";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-import ShutterSpeedIcon from "@material-ui/icons/ShutterSpeed";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import TelegramIcon from '@material-ui/icons/Telegram';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import QrCode2Icon from '@material-ui/icons/QrCode2';
 
 export const data = [
   {
@@ -12,30 +11,26 @@ export const data = [
     linkText: "dashboard",
   },
   {
-    icon: <AssessmentIcon />,
-    pageLink: "report",
-    linkText: "report",
+    icon: <TelegramIcon />,
+    pageLink: "filluP",
+    linkText: "Beneficiary deposit",
   },
   {
-    icon: <PeopleIcon />,
+    icon: <AccountBalanceWalletIcon />,
     pageLink: "users",
-    linkText: "user",
+    linkText: "Wallet Transfer",
   },
   {
-    icon: <AccountBalanceIcon />,
+    icon: <LocalAtmIcon />,
     pageLink: "branch",
-    linkText: "branch",
+    linkText: "Voucher Sales",
   },
   {
-    icon: <ShutterSpeedIcon />,
-    pageLink: "system-log",
-    linkText: "system log",
+    icon: <QrCode2Icon />,
+    pageLink: "branch",
+    linkText: "Generate QR Code",
   },
-  {
-    icon: <ExitToAppIcon />,
-    pageLink: "logout",
-    linkText: "logout",
-  },
+ 
 ];
 
 export const getPath = (linkText) => {

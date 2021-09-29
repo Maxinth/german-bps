@@ -2,14 +2,16 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Container = styled.aside`
-  background-color: var(--themeDarkColor);
+  /* background-color: var(--themeDarkColor); */
+  background-color: #333;
+  color: #fff;
   width: 230px;
   width: 100vw;
   height: 100vh;
   overflow: auto;
   /* position: absolute; */
   position: fixed;
-  border-top-right-radius: 100px;
+  /* border-top-right-radius: 100px; */
   /* border-bottom-right-radius: 100px; */
   border: 5px ridge #fff;
   /* border-bottom: 5px ridge transparent; */

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-  background-color: rgb(115, 214, 214);
+  /* background-color: rgb(115, 214, 214); */
+  background-color: #50C878;
   margin-top: 4.2rem;
   padding: 2rem;
   font-family: "Open sans", sans-serif;
@@ -13,7 +14,7 @@ const Container = styled.section`
     gap: 20px;
   }
   @media (min-width: 1100px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -50,8 +51,8 @@ const ReportBox = styled.div`
 
 const Title = styled.p`
   font-weight: bold;
-  font-size: 1.2rem;
-
+  font-size: 2.1rem;
+text-align:center;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 
@@ -61,7 +62,8 @@ const Title = styled.p`
   }
 `;
 const Count = styled.span`
-  font-size: 3.2rem;
+  font-size: 1.8rem;
   font-weight: bolder;
+  text-align:center;
 `;
 export { Container, ReportBox, Title, Count };

@@ -1,19 +1,18 @@
-import { ReportBox, Title, Count } from "./styled";
+import { ReportBox, Title, Count as Amount } from "./styled";
 import PropTypes from "prop-types";
 
-const Report = ({ icon, title, recordValue }) => {
+const Report = ({  title, amount }) => {
   return (
-    <ReportBox>
-      {icon}
+    <ReportBox>    
       <Title>{title}</Title>
-      <Count>{recordValue}</Count>
+      <Amount>$ {amount}</Amount>
     </ReportBox>
   );
 };
 
 Report.propType = {
-  icon: PropTypes.object,
+  
   title: PropTypes.string,
-  recordValue: PropTypes.string,
+  amount: PropTypes.string,
 };
 export default Report;
