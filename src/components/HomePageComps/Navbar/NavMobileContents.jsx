@@ -2,7 +2,7 @@ import React from "react";
 import NavSearch from "./NavSearch";
 import NavMenuAndSearch from "./NavMenuAndSearch";
 import NavMenuIcon from "./NavMenuIcon";
-import NotificationsAndProfile from "./NotificationsAndProfile";
+
 import { NavContentContainer } from "./styled";
 import PropTypes from "prop-types";
 
@@ -31,7 +31,6 @@ const NavMobileContents = ({
         />
       )}
       {/* hide NavSearch on HomePage Alone */}
-      {!showMobileSearch && <NotificationsAndProfile />}
     </NavContentContainer>
   );
 };
