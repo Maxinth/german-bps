@@ -1,5 +1,14 @@
+import { GlobalStyle, AppBox } from "./AppStyled";
+import HomePage from "./components/HomePageComps";
 function App() {
-  return <div className="App">bps</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <AppBox className="App">
+        <HomePage />
+      </AppBox>
+    </>
+  );
 }
 
 export default App;
