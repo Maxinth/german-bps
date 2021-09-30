@@ -2,7 +2,7 @@ import SpeedIcon from "@material-ui/icons/Speed";
 import TelegramIcon from '@material-ui/icons/Telegram';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
-import QrCode2Icon from '@material-ui/icons/QrCode2';
+// import QrCode2Icon from '@mui/icons-material/QrCode2';
 
 export const data = [
   {
@@ -25,11 +25,11 @@ export const data = [
     pageLink: "branch",
     linkText: "Voucher Sales",
   },
-  {
-    icon: <QrCode2Icon />,
-    pageLink: "branch",
-    linkText: "Generate QR Code",
-  },
+  // {
+  //   icon: <QrCode2Icon />,
+  //   pageLink: "branch",
+  //   linkText: "Generate QR Code",
+  // },
  
 ];
 

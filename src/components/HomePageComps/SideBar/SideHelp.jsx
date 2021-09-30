@@ -1,5 +1,5 @@
-import { HelpImage, LogoContainer as HelpImageBox, HelpText } from "./styled";
-// import helpImg from "../../../assets/help.png";
+import {  LogoContainer as HelpImageBox, HelpText } from "./styled";
+
 
 const SideHelp = () => {
   return (
