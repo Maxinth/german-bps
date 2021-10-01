@@ -1,8 +1,10 @@
-import React from "react";
-
+import { InputBox } from "./styled";
 const TableFilterInput = ({ filter, setFilter }) => {
   return (
-    <input value={filter || ""} onChange={(e) => setFilter(e.target.value)} />
+    <InputBox
+      value={filter || ""}
+      onChange={(e) => setFilter(e.target.value)}
+    />
   );
 };
 

@@ -10,45 +10,21 @@ import {
 import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
 import TableFilterInput from "./TableFilterInput";
-// import { useVariants } from "../../motions/useVariants";
-import { useTable, useSortBy, useGlobalFilter } from "react-table";
-import { useMemo } from "react";
 import { COLUMNS } from "./columns";
 import { data as DATA } from "./data";
 import ColumnSortIcons from "./ColumnSortIcons";
-export const RecordsTable = ({
-  tableHeadings,
-  type,
-  // data,
-  show,
+import useTableSortAndFilter from "./useSortAndFilter";
 
-  idToEdit,
-}) => {
-  // const { variantProps, subtleFlash } = useVariants();
-
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => DATA, []);
-
-  const tableInstance = useTable(
-    {
-      columns,
-      data,
-    },
-    useGlobalFilter,
-    useSortBy
-  );
-
+export const RecordsTable = () => {
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
-    state,
+    globalFilter,
     setGlobalFilter,
-  } = tableInstance;
-
-  const { globalFilter } = state;
+  } = useTableSortAndFilter(COLUMNS, DATA);
   return (
     <TableContainer
     // isInView={show}

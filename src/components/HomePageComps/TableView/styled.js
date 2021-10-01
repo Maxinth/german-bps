@@ -206,7 +206,26 @@ const SortBox = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+const InputBox = styled.input`
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  transition: all 0.2s;
+  // take out later
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  // take out later
+
+  &:focus {
+    background-color: #f2f2f2;
+    border: 1px solid green;
+  }
+`;
 export {
+  InputBox,
   SortBox,
   ColumnSortBox,
   ActionBox,
