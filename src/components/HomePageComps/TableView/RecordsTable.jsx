@@ -9,7 +9,7 @@ import {
 import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
 // import { useVariants } from "../../motions/useVariants";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import { useMemo } from "react";
 import { COLUMNS } from "./columns";
 import { data as DATA } from "./data";
@@ -26,10 +26,13 @@ export const RecordsTable = ({
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => DATA, []);
 
-  const tableInstance = useTable({
-    columns,
-    data,
-  });
+  const tableInstance = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
@@ -44,7 +47,7 @@ export const RecordsTable = ({
           {headerGroups.map((headerGroup) => (
             <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <TableHeading {...column.getHeaderProps()}>
+                <TableHeading {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                 </TableHeading>
               ))}

@@ -53,13 +53,13 @@ const TableContainer = styled(motion.section)`
   background-color: ghostwhite;
   /* HERE */
   height: 100%;
-  position: absolute;
+  /* position: absolute; */
   /* top: 300px; */
-  z-index: 100;
+  /* z-index: 100;
   left: auto;
   right: auto;
   opacity: 0;
-  visibility: 0;
+  visibility: 0; */
   /* & + section {
     margin-top: 4rem;
   } */
@@ -80,8 +80,8 @@ const TableContainer = styled(motion.section)`
 `;
 const Table = styled.table`
   box-shadow: 1px 2px 5px grey;
-  /* background-color: #fff; */
-  background-color: red;
+  background-color: #fff;
+  /* background-color: red; */
   border-radius: 10px;
   border: 1px solid #dee2e6;
   border-collapse: collapse;
@@ -99,8 +99,10 @@ const TableHeader = styled.thead`
 `;
 const TableRow = styled.tr`
   border: 1px solid #dee2e6;
-  /* border: 1px solid grey; */
-  /* border: 1px solid var(--gradientStart); */
+  cursor: pointer;
+  &:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 `;
 const TableHeading = styled.th`
   border: 1px solid #dee2e6;

@@ -24,7 +24,7 @@ export const data = [
     totalValue: 64600,
   },
   {
-    date: "/12/2021",
+    date: "12/10/2021",
     refNo: "FKE20200112R213T",
     walletDetails: "OLAOLUWA",
     depositReceived: 12000,
