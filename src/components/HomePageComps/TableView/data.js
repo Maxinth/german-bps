@@ -1,5 +1,6 @@
 export const data = [
   {
+    id: 1,
     date: "01/10/2021",
     refNo: "FKE20200112",
     walletDetails: "Farrow Farming Society",
@@ -8,6 +9,7 @@ export const data = [
     totalValue: 40000,
   },
   {
+    id: 2,
     date: "02/10/2021",
     refNo: "FKE20200112G883W",
     walletDetails: "ICODE4FOOD",
@@ -16,6 +18,7 @@ export const data = [
     totalValue: 78000,
   },
   {
+    id: 3,
     date: "11/10/2021",
     refNo: "FKE20200112312S224D",
     walletDetails: "MRHAMMED",
@@ -24,6 +27,7 @@ export const data = [
     totalValue: 64600,
   },
   {
+    id: 4,
     date: "12/10/2021",
     refNo: "FKE20200112R213T",
     walletDetails: "OLAOLUWA",
@@ -32,6 +36,7 @@ export const data = [
     totalValue: 67000,
   },
   {
+    id: 5,
     date: "18/10/2021",
     refNo: "FKE20200112R314R",
     walletDetails: "JIDE- CODA BLACK",

@@ -7,7 +7,6 @@ import {
   TableRow,
   SortBox,
 } from "./styled";
-import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
 import TableFilterInput from "./TableFilterInput";
 import { COLUMNS } from "./columns";
@@ -52,20 +51,20 @@ export const RecordsTable = () => {
         <TableBody {...getTableBodyProps()}>
           {rows.map((row, index) => {
             prepareRow(row);
+            // console.log(rows);
+            // console.log(row.original.id);
             return (
-              <TableRowItems key={index} {...row.getRowProps()} row={row} />
+              <TableRowItems
+                key={index}
+                {...row.getRowProps()}
+                row={row}
+                rowId={row.original.id}
+                rows={rows}
+              />
             );
           })}
         </TableBody>
       </Table>
     </TableContainer>
   );
-};
-
-RecordsTable.propType = {
-  tableHeadings: PropTypes.array,
-  data: PropTypes.array,
-  type: PropTypes.string,
-  show: PropTypes.bool,
-  idToEdit: PropTypes.arrayOf(["string", "number"]),
 };

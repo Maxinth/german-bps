@@ -8,7 +8,7 @@ const ColumnSortIcons = ({ column }) => {
       ? "up"
       : "down"
     : "";
-  console.log("sort = ", sortDirectionClass);
+
   const sortDirectionProps = { className: sortDirectionClass };
   return (
     <ColumnSortBox>
