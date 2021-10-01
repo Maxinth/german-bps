@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 const Container = styled.section`
   /* border: 1px solid #dee2e6; */
+  background: #333;
   padding: 2rem;
   ${({ hide }) =>
     hide &&
@@ -10,7 +11,6 @@ const Container = styled.section`
       display: none;
     `}
 `;
-
 const TabOptionsContainer = styled.ul`
   display: flex;
   align-items: center;
@@ -80,7 +80,8 @@ const TableContainer = styled(motion.section)`
 `;
 const Table = styled.table`
   box-shadow: 1px 2px 5px grey;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: red;
   border-radius: 10px;
   border: 1px solid #dee2e6;
   border-collapse: collapse;

@@ -8,50 +8,56 @@ import {
 } from "./styled";
 import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
-import { useVariants } from "../../motions/useVariants";
-
+// import { useVariants } from "../../motions/useVariants";
+import { useTable } from "react-table";
+import { useMemo } from "react";
+import { COLUMNS } from "./columns";
+import { data as DATA } from "./data";
 export const RecordsTable = ({
   tableHeadings,
   type,
-  data,
+  // data,
   show,
-  editBranch,
-  removeBranch,
-  showEditBranchView,
-  showEditUserView,
-  editUser,
+
   idToEdit,
 }) => {
-  const { variantProps, subtleFlash } = useVariants();
+  // const { variantProps, subtleFlash } = useVariants();
+
+  const columns = useMemo(() => COLUMNS, []);
+  const data = useMemo(() => DATA, []);
+
+  const tableInstance = useTable({
+    columns,
+    data,
+  });
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
   return (
     <TableContainer
-      isInView={show}
-      variants={subtleFlash(1, 0)}
-      {...variantProps}
+    // isInView={show}
+    // variants={subtleFlash(1, 0)}
+    // {...variantProps}
     >
-      <Table>
+      <Table {...getTableProps()}>
         <TableHeader>
-          <TableRow>
-            {tableHeadings.map((item, index) => (
-              <TableHeading key={index}>{item}</TableHeading>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {data.map((item, index) => (
-            <TableRowItems
-              key={index}
-              {...item}
-              index={index}
-              type={type}
-              editBranch={editBranch}
-              editUser={editUser}
-              removeBranch={removeBranch}
-              showEditBranchView={showEditBranchView}
-              showEditUserView={showEditUserView}
-              idToEdit={idToEdit}
-            />
+          {headerGroups.map((headerGroup) => (
+            <TableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <TableHeading {...column.getHeaderProps()}>
+                  {column.render("Header")}
+                </TableHeading>
+              ))}
+            </TableRow>
           ))}
+        </TableHeader>
+        <TableBody {...getTableBodyProps()}>
+          {rows.map((row, index) => {
+            prepareRow(row);
+            return (
+              <TableRowItems key={index} {...row.getRowProps()} row={row} />
+            );
+          })}
         </TableBody>
       </Table>
     </TableContainer>
@@ -63,10 +69,5 @@ RecordsTable.propType = {
   data: PropTypes.array,
   type: PropTypes.string,
   show: PropTypes.bool,
-  editBranch: PropTypes.func,
   idToEdit: PropTypes.arrayOf(["string", "number"]),
-  removeBranch: PropTypes.func,
-  showEditBranchView: PropTypes.func,
-  showEditUserView: PropTypes.func,
-  editUser: PropTypes.func,
 };
