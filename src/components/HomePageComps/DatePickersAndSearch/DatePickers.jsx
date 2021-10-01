@@ -1,9 +1,11 @@
-import DatePicker from "react-datepicker";
-import { useState } from "react";
+import React, { useState } from "react";
+import { DatePicker,  } from "@material-ui/pickers";
+
+
 
 const DatePickers = () => {
   // define check-in and check-out state
-  const [initialDate, setInitialDate] = useState(null);
+  const [initialDate, setInitialDate] = useState(new Date());
   const [finalDate, setFinalDate] = useState(null);
 
   // define handler change function on check-in date
@@ -22,16 +24,12 @@ const DatePickers = () => {
         selected={initialDate}
         onChange={handleInitialDateChange}
         dateFormat="yyyy/MM/dd"
-        name="initial Date"
-        // minDate={new Date()}
       />
 
       <DatePicker
         selected={finalDate}
         onChange={handleFinalDateChange}
         dateFormat="dd/MM/yyyy"
-        name="final Date"
-        // minDate={initialDate}
       />
     </>
   );
