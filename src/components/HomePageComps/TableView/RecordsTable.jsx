@@ -9,8 +9,9 @@ import {
 } from "./styled";
 import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
+import TableFilterInput from "./TableFilterInput";
 // import { useVariants } from "../../motions/useVariants";
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, useGlobalFilter } from "react-table";
 import { useMemo } from "react";
 import { COLUMNS } from "./columns";
 import { data as DATA } from "./data";
@@ -33,17 +34,28 @@ export const RecordsTable = ({
       columns,
       data,
     },
+    useGlobalFilter,
     useSortBy
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    setGlobalFilter,
+  } = tableInstance;
+
+  const { globalFilter } = state;
   return (
     <TableContainer
     // isInView={show}
     // variants={subtleFlash(1, 0)}
     // {...variantProps}
     >
+      <TableFilterInput filter={globalFilter} setFilter={setGlobalFilter} />
       <Table {...getTableProps()}>
         <TableHeader>
           {headerGroups.map((headerGroup) => (

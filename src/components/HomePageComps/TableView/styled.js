@@ -182,15 +182,16 @@ const ColumnSortBox = styled.div`
 
   & svg {
     color: #fff;
+    transition: color 0.2s;
   }
   & > svg.up {
-    color: red;
+    color: tomato;
   }
   & > svg.up + svg {
     color: #fff;
   }
   & > svg + svg.down {
-    color: red;
+    color: tomato;
   }
   & > svg {
     color: #fff;
