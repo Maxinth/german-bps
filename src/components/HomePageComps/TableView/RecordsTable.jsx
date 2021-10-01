@@ -5,6 +5,7 @@ import {
   TableHeader,
   TableHeading,
   TableRow,
+  SortBox,
 } from "./styled";
 import PropTypes from "prop-types";
 import TableRowItems from "./TableRowItems";
@@ -13,6 +14,7 @@ import { useTable, useSortBy } from "react-table";
 import { useMemo } from "react";
 import { COLUMNS } from "./columns";
 import { data as DATA } from "./data";
+import ColumnSortIcons from "./ColumnSortIcons";
 export const RecordsTable = ({
   tableHeadings,
   type,
@@ -47,8 +49,13 @@ export const RecordsTable = ({
           {headerGroups.map((headerGroup) => (
             <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <TableHeading {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
+                <TableHeading
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
+                  <SortBox>
+                    {column.render("Header")}
+                    <ColumnSortIcons column={column} />
+                  </SortBox>
                 </TableHeading>
               ))}
             </TableRow>

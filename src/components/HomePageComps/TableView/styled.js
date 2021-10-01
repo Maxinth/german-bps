@@ -173,7 +173,41 @@ const DummyContainer = styled.div`
       visibility: 1;
     `}
 `;
+
+const ColumnSortBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    color: #fff;
+  }
+  & > svg.up {
+    color: red;
+  }
+  & > svg.up + svg {
+    color: #fff;
+  }
+  & > svg + svg.down {
+    color: red;
+  }
+  & > svg {
+    color: #fff;
+  }
+  & > svg + svg {
+    color: #fff;
+  }
+`;
+
+const SortBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 export {
+  SortBox,
+  ColumnSortBox,
   ActionBox,
   TableBody,
   TableDataCell,
