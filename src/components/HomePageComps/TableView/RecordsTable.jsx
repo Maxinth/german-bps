@@ -8,11 +8,12 @@ import {
   SortBox,
 } from "./styled";
 import TableRowItems from "./TableRowItems";
-import TableFilterInput from "./TableFilterInput";
+// import TableFilterInput from "./TableFilterInput";
 import { COLUMNS } from "./columns";
 import { data as DATA } from "./data";
 import ColumnSortIcons from "./ColumnSortIcons";
 import useTableSortAndFilter from "./useSortAndFilter";
+import DatePickerAndSearch from "../DatePickersAndSearch";
 
 export const RecordsTable = () => {
   const {
@@ -30,7 +31,7 @@ export const RecordsTable = () => {
     // variants={subtleFlash(1, 0)}
     // {...variantProps}
     >
-      <TableFilterInput filter={globalFilter} setFilter={setGlobalFilter} />
+      <DatePickerAndSearch filter={globalFilter} setFilter={setGlobalFilter} />
       <Table {...getTableProps()}>
         <TableHeader>
           {headerGroups.map((headerGroup) => (

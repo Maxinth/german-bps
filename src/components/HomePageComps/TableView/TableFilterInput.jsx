@@ -1,4 +1,6 @@
 import { InputBox } from "./styled";
+import PropTypes from "prop-types";
+
 const TableFilterInput = ({ filter, setFilter }) => {
   return (
     <InputBox
@@ -8,4 +10,8 @@ const TableFilterInput = ({ filter, setFilter }) => {
   );
 };
 
+TableFilterInput.propTypes = {
+  filter: PropTypes.string,
+  setFilter: PropTypes.func,
+};
 export default TableFilterInput;

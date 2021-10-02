@@ -2,11 +2,11 @@ import DatePickers from "./DatePickers";
 import { Container } from "./styled";
 import TableFilterInput from "../TableView/TableFilterInput";
 
-const DatePickerAndSearch = () => {
+const DatePickerAndSearch = (props) => {
   return (
     <Container>
       <DatePickers />
-      <TableFilterInput />
+      <TableFilterInput {...props} />
     </Container>
   );
 };
