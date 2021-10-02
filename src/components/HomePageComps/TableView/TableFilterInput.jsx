@@ -6,6 +6,7 @@ const TableFilterInput = ({ filter, setFilter }) => {
     <InputBox
       value={filter || ""}
       onChange={(e) => setFilter(e.target.value)}
+      placeholder="Search by text in any column."
     />
   );
 };

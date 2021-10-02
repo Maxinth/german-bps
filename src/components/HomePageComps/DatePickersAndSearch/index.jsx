@@ -5,7 +5,7 @@ import TableFilterInput from "../TableView/TableFilterInput";
 const DatePickerAndSearch = (props) => {
   return (
     <Container>
-      <DatePickers />
+      <DatePickers {...props} />
       <TableFilterInput {...props} />
     </Container>
   );

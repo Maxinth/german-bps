@@ -14,8 +14,12 @@ import { data as DATA } from "./data";
 import ColumnSortIcons from "./ColumnSortIcons";
 import useTableSortAndFilter from "./useSortAndFilter";
 import DatePickerAndSearch from "../DatePickersAndSearch";
+import { useState } from "react";
 
 export const RecordsTable = () => {
+  const [dataToSort, setDataToSort] = useState(DATA);
+  // see comments
+  const handlePickerFilter = (newData) => setDataToSort(newData);
   const {
     getTableProps,
     getTableBodyProps,
@@ -24,14 +28,20 @@ export const RecordsTable = () => {
     prepareRow,
     globalFilter,
     setGlobalFilter,
-  } = useTableSortAndFilter(COLUMNS, DATA);
+  } = useTableSortAndFilter(COLUMNS, dataToSort);
   return (
     <TableContainer
     // isInView={show}
     // variants={subtleFlash(1, 0)}
     // {...variantProps}
     >
-      <DatePickerAndSearch filter={globalFilter} setFilter={setGlobalFilter} />
+      <DatePickerAndSearch
+        filter={globalFilter}
+        setFilter={setGlobalFilter}
+        dataReset={DATA}
+        data={dataToSort}
+        handlePickerFilter={handlePickerFilter}
+      />
       <Table {...getTableProps()}>
         <TableHeader>
           {headerGroups.map((headerGroup) => (
@@ -53,7 +63,7 @@ export const RecordsTable = () => {
           {rows.map((row, index) => {
             prepareRow(row);
             // console.log(rows);
-            // console.log(row.original.id);
+            // // console.log(row.original.id);
             return (
               <TableRowItems
                 key={index}
@@ -69,3 +79,9 @@ export const RecordsTable = () => {
     </TableContainer>
   );
 };
+
+/*
+ I have decided not supply  DATA  directly into the useTableAndSort hook as I want to filter 
+ using normal js filtering and react-table and so the data can be changed by each whilst still referencing just one data.
+
+*/
