@@ -1,6 +1,6 @@
 export const COLUMNS = [
   {
-    Header: "Date",
+    Header: "Date (yyyy-mm-dd)",
     accessor: "date",
   },
   {

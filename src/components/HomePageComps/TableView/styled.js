@@ -48,7 +48,7 @@ const TableContainer = styled(motion.section)`
   width: 100%;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  max-width: 500px;
+  /* max-width: 700px; */
   transition: all 0.2s;
   background-color: ghostwhite;
   /* HERE */
@@ -87,10 +87,15 @@ const Table = styled.table`
   border-collapse: collapse;
   padding: 2rem;
   width: 100%;
+  max-width: 700px;
+  transition: max-width 0.2s;
   > * {
     text-align: center;
     border: 1px solid #dee2e6;
     padding: inherit;
+  }
+  @media (min-width: 768px) {
+    max-width: unset;
   }
 `;
 const TableHeader = styled.thead`
