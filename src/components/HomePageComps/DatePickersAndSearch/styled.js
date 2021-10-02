@@ -17,4 +17,7 @@ const Container = styled.section`
   }
 `;
 
-export { Container };
+const Input = styled.input``;
+const DatePickerContainer = styled.section``;
+
+export { Container, Input, DatePickerContainer };
