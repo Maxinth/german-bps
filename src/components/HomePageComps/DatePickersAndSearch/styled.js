@@ -1,20 +1,38 @@
 import styled from "styled-components";
-
+import { InputBox } from "../TableView/styled";
 const Container = styled.section`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1300px;
+  width: 100%;
   /* margin: 0 auto; */
   padding: 1rem;
 
+  & ${InputBox} {
+    align-self: center;
+    margin: 0.8rem 0;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
   @media (min-width: 500px) {
     flex-direction: row;
+    & ${InputBox} {
+      align-self: flex-start;
+      margin: unset;
+    }
   }
   @media (min-width: 768px) {
-    padding: 2rem;
-    margin: 0 auto;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    /* margin: 0 auto; */
+    align-items: center;
+    & ${InputBox} {
+      align-self: center;
+      width: 60%;
+    }
   }
 `;
 
@@ -28,6 +46,7 @@ const Input = styled.input`
   cursor: pointer;
   outline: none;
   border: none;
+  box-shadow: 1px 2px 5px #333;
   transition: margin 0.2s;
   margin-bottom: 0.8rem;
   @media (min-width: 768px) {
@@ -42,31 +61,74 @@ const DatePickerContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  width: 100%;
   @media (min-width: 768px) {
     flex-direction: row;
+    justify-content: flex-start;
   }
 `;
 
 const Button = styled.button`
   border: 1px solid #333;
   outline: none;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   cursor: pointer;
   background-color: #f2f2f2;
   color: #333;
-  box-shadow: 1px 2px 4px #f2f2f2;
+  box-shadow: 1px 2px 5px #333;
   transition: all 0.2s;
   border-radius: 5px;
   margin-right: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Raleway", sans-serif;
+  & > svg {
+    font-size: 1.1rem !important;
+  }
+
+  &:nth-child(2) {
+    padding: 0.4rem;
+  }
   &:hover {
     background-color: #333;
     color: #f2f2f2;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
-export { Button, Container, Input, DatePickerContainer };
+const PickerButtonsBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+`;
+
+const Box = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & > * {
+    width: 100%;
+  }
+  @media (min-width: 500px) {
+    width: unset;
+    & > * {
+      width: unset;
+    }
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+`;
+
+export { Box, PickerButtonsBox, Button, Container, Input, DatePickerContainer };
