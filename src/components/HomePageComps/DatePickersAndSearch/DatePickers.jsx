@@ -1,4 +1,4 @@
-import { Input, DatePickerContainer, Box } from "./styled";
+import { Input, DatePickerContainer, Box, Label, Span } from "./styled";
 import { useState } from "react";
 import PickerButtonOptions from "./PickerButtonOptions";
 
@@ -16,8 +16,14 @@ const DatePickers = ({ data, handlePickerFilter, dataReset }) => {
   return (
     <DatePickerContainer>
       <Box>
-        <Input type="date" value={fromDate} onChange={handleFroChange} />
-        <Input type="date" value={toDate} onChange={handleToChange} />
+        <Label>
+          <Span>From date:</Span>
+          <Input type="date" value={fromDate} onChange={handleFroChange} />
+        </Label>
+        <Label>
+          <Span>To date:</Span>
+          <Input type="date" value={toDate} onChange={handleToChange} />
+        </Label>
       </Box>
       <PickerButtonOptions
         handlePickerFilter={handlePickerFilter}

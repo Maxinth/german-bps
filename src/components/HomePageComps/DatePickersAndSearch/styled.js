@@ -30,7 +30,7 @@ const Container = styled.section`
     /* margin: 0 auto; */
     align-items: center;
     & ${InputBox} {
-      align-self: center;
+      align-self: flex-end;
       width: 60%;
     }
   }
@@ -108,6 +108,9 @@ const PickerButtonsBox = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 0.5rem;
+  @media (min-width: 768px) {
+    align-self: flex-end;
+  }
 `;
 
 const Box = styled.div`
@@ -131,4 +134,32 @@ const Box = styled.div`
   }
 `;
 
-export { Box, PickerButtonsBox, Button, Container, Input, DatePickerContainer };
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    &:first-child {
+      margin-right: 0.7rem;
+    }
+  }
+`;
+const Span = styled.span`
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+`;
+
+export {
+  Span,
+  Label,
+  Box,
+  PickerButtonsBox,
+  Button,
+  Container,
+  Input,
+  DatePickerContainer,
+};
