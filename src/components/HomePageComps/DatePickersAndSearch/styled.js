@@ -48,4 +48,25 @@ const DatePickerContainer = styled.section`
   }
 `;
 
-export { Container, Input, DatePickerContainer };
+const Button = styled.button`
+  border: 1px solid #333;
+  outline: none;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  color: #333;
+  box-shadow: 1px 2px 4px #f2f2f2;
+  transition: all 0.2s;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  &:hover {
+    background-color: #333;
+    color: #f2f2f2;
+  }
+`;
+
+export { Button, Container, Input, DatePickerContainer };

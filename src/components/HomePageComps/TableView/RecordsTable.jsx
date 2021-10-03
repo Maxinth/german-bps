@@ -17,9 +17,9 @@ import DatePickerAndSearch from "../DatePickersAndSearch";
 import { useState } from "react";
 
 export const RecordsTable = () => {
-  const [dataToSort, setDataToSort] = useState(DATA);
+  const [mainData, setMainData] = useState(DATA);
   // see comments
-  const handlePickerFilter = (newData) => setDataToSort(newData);
+  const handlePickerFilter = (newData) => setMainData(newData);
   const {
     getTableProps,
     getTableBodyProps,
@@ -28,7 +28,7 @@ export const RecordsTable = () => {
     prepareRow,
     globalFilter,
     setGlobalFilter,
-  } = useTableSortAndFilter(COLUMNS, dataToSort);
+  } = useTableSortAndFilter(COLUMNS, mainData);
   return (
     <TableContainer
     // isInView={show}
@@ -39,7 +39,7 @@ export const RecordsTable = () => {
         filter={globalFilter}
         setFilter={setGlobalFilter}
         dataReset={DATA}
-        data={dataToSort}
+        data={mainData}
         handlePickerFilter={handlePickerFilter}
       />
       <Table {...getTableProps()}>
@@ -62,8 +62,7 @@ export const RecordsTable = () => {
         <TableBody {...getTableBodyProps()}>
           {rows.map((row, index) => {
             prepareRow(row);
-            // console.log(rows);
-            // // console.log(row.original.id);
+
             return (
               <TableRowItems
                 key={index}
