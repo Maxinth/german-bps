@@ -101,6 +101,18 @@ const Button = styled.button`
   &:disabled {
     cursor: not-allowed;
   }
+  &.oneSupplied {
+    background-color: orange;
+    color: #333;
+  }
+  &.noneSupplied {
+    background-color: transparent;
+    color: #333;
+  }
+  &.bothSupplied {
+    background-color: green;
+    color: #fff;
+  }
 `;
 
 const PickerButtonsBox = styled.div`

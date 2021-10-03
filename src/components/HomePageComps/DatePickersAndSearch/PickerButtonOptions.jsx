@@ -7,13 +7,19 @@ const PickerButtonOptions = ({
   dateRangeFilter,
   dataReset,
   disableGoBtn,
+  goBtnColor,
 }) => {
   return (
     <PickerButtonsBox>
       <Button
         onClick={() => handlePickerFilter(dateRangeFilter)}
-        title={disableGoBtn ? "supply to date to continue" : "Filter by date"}
+        title={
+          disableGoBtn
+            ? "supply values for both date fields to continue"
+            : "Filter by date"
+        }
         disabled={disableGoBtn}
+        className={goBtnColor}
       >
         Go
       </Button>
@@ -32,6 +38,7 @@ PickerButtonOptions.propTypes = {
   dateRangeFilter: PropTypes.array,
   dataReset: PropTypes.array,
   disableGoBtn: PropTypes.bool,
+  goBtnColor: PropTypes.string,
 };
 
 export default PickerButtonOptions;
