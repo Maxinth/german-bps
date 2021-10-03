@@ -11,10 +11,15 @@ const DatePickers = ({ data, handlePickerFilter, dataReset }) => {
   const handleFroChange = (e) => SetFromDate(e.target.value);
   const handleToChange = (e) => SetToDate(e.target.value);
 
+  const resetInputs = () => {
+    SetFromDate("");
+    SetToDate("");
+  };
   const dateRangeFilter = data.filter(
     (item) => item.date >= fromDate && item.date <= toDate
   );
 
+  const invalidDatesSupplied = fromDate > toDate;
   return (
     <DatePickerContainer>
       <DatePickersUnits
@@ -27,8 +32,10 @@ const DatePickers = ({ data, handlePickerFilter, dataReset }) => {
         handlePickerFilter={handlePickerFilter}
         dataReset={dataReset}
         dateRangeFilter={dateRangeFilter}
-        disableGoBtn={toDate === "" || fromDate === ""}
+        suppliedOnlyField={toDate === "" || fromDate === ""}
         goBtnColor={goBtnBgColor(fromDate, toDate)}
+        resetInputs={resetInputs}
+        invalidDates={invalidDatesSupplied}
       />
     </DatePickerContainer>
   );

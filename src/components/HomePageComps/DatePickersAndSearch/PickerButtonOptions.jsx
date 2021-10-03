@@ -6,27 +6,32 @@ const PickerButtonOptions = ({
   handlePickerFilter,
   dateRangeFilter,
   dataReset,
-  disableGoBtn,
+  suppliedOnlyField,
   goBtnColor,
+  resetInputs,
+  invalidDates,
 }) => {
+  const handleRefreshClick = () => {
+    resetInputs();
+    handlePickerFilter(dataReset);
+  };
   return (
     <PickerButtonsBox>
       <Button
         onClick={() => handlePickerFilter(dateRangeFilter)}
         title={
-          disableGoBtn
-            ? "supply values for both date fields to continue"
+          suppliedOnlyField
+            ? "Kindly supply values for both date fields to continue"
+            : invalidDates
+            ? "From-date can't be greater than to-Date"
             : "Filter by date"
         }
-        disabled={disableGoBtn}
+        disabled={invalidDates || suppliedOnlyField}
         className={goBtnColor}
       >
         Go
       </Button>
-      <Button
-        onClick={() => handlePickerFilter(dataReset)}
-        title="Revert to Initial Data"
-      >
+      <Button onClick={handleRefreshClick} title="Revert to Initial Data">
         <RefreshIcon />
       </Button>
     </PickerButtonsBox>
@@ -35,9 +40,11 @@ const PickerButtonOptions = ({
 
 PickerButtonOptions.propTypes = {
   handlePickerFilter: PropTypes.func,
+  resetInputs: PropTypes.func,
   dateRangeFilter: PropTypes.array,
   dataReset: PropTypes.array,
-  disableGoBtn: PropTypes.bool,
+  suppliedOnlyField: PropTypes.bool,
+  invalidDates: PropTypes.bool,
   goBtnColor: PropTypes.string,
 };
 

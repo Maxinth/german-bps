@@ -1,6 +1,6 @@
 export const goBtnBgColor = (fromDate, toDate) => {
   let btnClass = "";
-  if (!fromDate && !toDate) {
+  if ((!fromDate && !toDate) || fromDate > toDate) {
     btnClass = "noneSupplied";
   } else if (!fromDate || !toDate) {
     btnClass = "oneSupplied";
