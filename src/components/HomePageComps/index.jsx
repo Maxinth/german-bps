@@ -3,6 +3,7 @@ import ReportsData from "./ReportsData";
 import { useVariants } from "../../motions/useVariants";
 // import DatePickerAndSearch from "./DatePickersAndSearch";
 import { RecordsTable } from "./TableView";
+import SummaryDetails from "./SummaryDetails";
 
 const HomePage = () => {
   const { variantProps, pageVariant } = useVariants();
@@ -10,7 +11,10 @@ const HomePage = () => {
     <Container variants={pageVariant} {...variantProps}>
       <ReportsData />
       {/* <DatePickerAndSearch /> */}
-      <RecordsTable />
+      <div>
+        <RecordsTable />
+        <SummaryDetails />
+      </div>
     </Container>
   );
 };

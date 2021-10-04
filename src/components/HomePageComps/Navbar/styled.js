@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 const Nav = styled(motion.nav)`
   width: 100%;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   position: fixed;
   top: 0;
   min-height: 66px;

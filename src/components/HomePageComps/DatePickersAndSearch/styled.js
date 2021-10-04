@@ -5,7 +5,7 @@ const Container = styled.section`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   width: 100%;
   /* margin: 0 auto; */
   padding: 1rem;
