@@ -45,3 +45,13 @@ export const data = [
     totalValue: 39000,
   },
 ];
+
+export const itemData = {
+  id: "",
+  date: "",
+  refNo: "",
+  walletDetails: "",
+  depositReceived: "",
+  subsidyAmount: "",
+  totalValue: "",
+};

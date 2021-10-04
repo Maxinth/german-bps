@@ -15,8 +15,9 @@ import ColumnSortIcons from "./ColumnSortIcons";
 import useTableSortAndFilter from "./useSortAndFilter";
 import DatePickerAndSearch from "../DatePickersAndSearch";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export const RecordsTable = () => {
+export const RecordsTable = ({ showDetails, getItem, clickShow }) => {
   const [mainData, setMainData] = useState(DATA);
   // see comments
   const handlePickerFilter = (newData) => setMainData(newData);
@@ -70,6 +71,9 @@ export const RecordsTable = () => {
                 row={row}
                 rowId={row.original.id}
                 rows={rows}
+                showDetails={showDetails}
+                getItem={getItem}
+                clickShow={clickShow}
               />
             );
           })}
@@ -79,6 +83,11 @@ export const RecordsTable = () => {
   );
 };
 
+RecordsTable.propTypes = {
+  showDetail: PropTypes.func,
+  clickShow: PropTypes.bool,
+  getItem: PropTypes.func,
+};
 /*
  I have decided not supply  DATA  directly into the useTableAndSort hook as I want to filter 
  using normal js filtering and react-table and so the data can be changed by each whilst still referencing just one data.

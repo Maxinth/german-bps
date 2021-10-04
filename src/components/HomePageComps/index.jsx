@@ -5,10 +5,14 @@ import { useVariants } from "../../motions/useVariants";
 import { RecordsTable } from "./TableView";
 import SummaryDetails from "./SummaryDetails";
 import { useState } from "react";
+import { itemData } from "./TableView/data";
 
 const HomePage = () => {
   const { variantProps, pageVariant } = useVariants();
   const [showDetail, setShowDetail] = useState(false);
+  const [tableItemClicked, setTableItemClicked] = useState(itemData);
+
+  const getItemClicked = (item) => setTableItemClicked(item);
 
   const showDetailsView = () => setShowDetail(true);
   return (
@@ -17,9 +21,13 @@ const HomePage = () => {
 
       <Box>
         {!showDetail ? (
-          <RecordsTable showDetail={showDetailsView} />
+          <RecordsTable
+            showDetail={showDetailsView}
+            getItem={getItemClicked}
+            clickShow={true}
+          />
         ) : (
-          <SummaryDetails />
+          <SummaryDetails {...tableItemClicked} />
         )}
       </Box>
     </Container>

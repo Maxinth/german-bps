@@ -4,9 +4,12 @@ import { data } from "./data";
 const RightSummary = () => {
   return (
     <RightBox>
-      {data.map((item) => (
-        <DetailItem key={item.detailsName} {...item} />
-      ))}
+      {/* {data.map((item) => ( */}
+      <DetailItem detailsName="scam" detailsValue="moreScam" />
+      <DetailItem detailsName="scam" detailsValue="moreScam" />
+      <DetailItem detailsName="scam" detailsValue="moreScam" />
+      <DetailItem detailsName="scam" detailsValue="moreScam" />
+      {/* ))} */}
     </RightBox>
   );
 };

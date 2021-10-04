@@ -1,7 +1,9 @@
 import { Container, Heading, InnerBox } from "./styled";
 import LeftSummary from "./LeftSummary";
 import RightSummary from "./RightSummary";
-const SummaryDetails = () => {
+const SummaryDetails = (props) => {
+  console.log("Summary details Props = ");
+  console.log(props);
   return (
     <Container>
       <Heading>Basic Subsidy Scheme</Heading>
