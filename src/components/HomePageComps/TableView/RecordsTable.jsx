@@ -17,7 +17,7 @@ import DatePickerAndSearch from "../DatePickersAndSearch";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-export const RecordsTable = ({ showDetails, getItem, clickShow }) => {
+export const RecordsTable = ({ showDetail, getItem, clickShow }) => {
   const [mainData, setMainData] = useState(DATA);
   // see comments
   const handlePickerFilter = (newData) => setMainData(newData);
@@ -71,7 +71,7 @@ export const RecordsTable = ({ showDetails, getItem, clickShow }) => {
                 row={row}
                 rowId={row.original.id}
                 rows={rows}
-                showDetails={showDetails}
+                showDetail={showDetail}
                 getItem={getItem}
                 clickShow={clickShow}
               />

@@ -15,19 +15,24 @@ const HomePage = () => {
   const getItemClicked = (item) => setTableItemClicked(item);
 
   const showDetailsView = () => setShowDetail(true);
+  const revertToInitialView = () => setShowDetail(false);
   return (
     <Container variants={pageVariant} {...variantProps}>
-      <ReportsData />
+      {!showDetail && <ReportsData />}
 
       <Box>
-        {!showDetail ? (
+        {!showDetail && (
           <RecordsTable
             showDetail={showDetailsView}
             getItem={getItemClicked}
             clickShow={true}
           />
-        ) : (
-          <SummaryDetails {...tableItemClicked} />
+        )}
+        {showDetail && (
+          <SummaryDetails
+            {...tableItemClicked}
+            backToTableView={revertToInitialView}
+          />
         )}
       </Box>
     </Container>

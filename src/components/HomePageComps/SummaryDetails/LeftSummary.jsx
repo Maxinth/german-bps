@@ -1,11 +1,12 @@
 import { LeftBox, DummyQrImage, Title, Amount } from "./styled";
 import dummyImg from "../../../assets/mockQrCode.PNG";
-const LeftSummary = () => {
+
+const LeftSummary = ({ totalVal }) => {
   return (
     <LeftBox>
       <DummyQrImage src={dummyImg} />
       <Title>Goods value released</Title>
-      <Amount>$ 78,000</Amount>
+      <Amount>${totalVal}</Amount>
     </LeftBox>
   );
 };

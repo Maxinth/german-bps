@@ -10,9 +10,9 @@ const TableRowItems = ({
   getItem,
 }) => {
   const handleClick = () => {
-    console.log("rowId = ", rowId);
+    // console.log("rowId = ", rowId);
     const rowObj = rows.find((row) => row.original.id === rowId);
-    console.log(rowObj?.original);
+    // console.log(rowObj?.original);
     getItem(rowObj);
     if (clickShow) {
       showDetail();
