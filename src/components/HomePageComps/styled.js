@@ -10,4 +10,7 @@ const Container = styled(motion.section)`
   }
 `;
 
-export { Container };
+
+const Box = styled.section``;
+
+export {Box, Container };

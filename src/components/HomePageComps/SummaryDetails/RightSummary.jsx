@@ -1,12 +1,12 @@
-import { RightBox, RightListItem, ItemName, ItemValue } from "./styled";
-
+import { RightBox } from "./styled";
+import DetailItem from "./DetailItem";
+import { data } from "./data";
 const RightSummary = () => {
   return (
     <RightBox>
-      <RightListItem>
-        <ItemName>Date</ItemName>
-        <ItemValue>15/01/2021</ItemValue>
-      </RightListItem>
+      {data.map((item) => (
+        <DetailItem key={item.detailsName} {...item} />
+      ))}
     </RightBox>
   );
 };
