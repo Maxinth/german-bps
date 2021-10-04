@@ -9,6 +9,7 @@ const InnerBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const Heading = styled.h1`
@@ -27,14 +28,21 @@ const Heading = styled.h1`
 const LeftBox = styled.div`
   border: 1px solid red;
 `;
+
 const Title = styled.p``;
 const Amount = styled.h4``;
-const RightBox = styled.div``;
+const RightBox = styled.ul``;
 const DummyQrImage = styled.img``;
 const DetailsContainer = styled.section``;
+const RightListItem = styled.li``;
+const ItemName = styled.span``;
+const ItemValue = styled.span``;
 
 export {
   Title,
+  ItemName,
+  ItemValue,
+  RightListItem,
   Amount,
   InnerBox,
   DummyQrImage,
