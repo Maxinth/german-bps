@@ -1,7 +1,7 @@
 import { GlobalStyle, AppBox } from "./AppStyled";
 import HomePage from "./components/RPA/HomePageComps";
 import { Switch, Route } from "react-router-dom";
-import SharedLayout from "./components/RPA/SharedLayout";
+import SharedLayout from "./components/SharedLayout";
 function App() {
   return (
     <>

@@ -2,7 +2,7 @@ import { Nav } from "./styled";
 import { useState } from "react";
 import NavMobileContents from "./NavMobileContents";
 import NavLargerScreenContents from "./NavLargerScreenContents";
-import { useVariants } from "../../../motions/useVariants";
+import { useVariants } from "../../../../motions/useVariants";
 
 const Navbar = () => {
   const { variantProps, subtleFlash } = useVariants();

@@ -3,7 +3,7 @@ import SearchSharpIcon from "@material-ui/icons/SearchSharp";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { btnClickHandler } from "./data";
 import PropTypes from "prop-types";
-import { useVariants } from "../../../motions/useVariants";
+import { useVariants } from "../../../../motions/useVariants";
 
 const NavSearch = ({ showOnMobile, revertToInitialView }) => {
   const { variantProps, subtleFlash } = useVariants();
