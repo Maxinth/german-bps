@@ -9,7 +9,7 @@ function App() {
       <AppBox className="App">
         <SharedLayout>
           <Switch>
-            <Route path="/" component={HomePage} exact />           
+            <Route path="/rpa/dashboard" component={HomePage} exact />
           </Switch>
         </SharedLayout>
       </AppBox>

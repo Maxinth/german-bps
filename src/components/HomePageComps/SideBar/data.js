@@ -1,23 +1,23 @@
 import SpeedIcon from "@material-ui/icons/Speed";
-import TelegramIcon from '@material-ui/icons/Telegram';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import TelegramIcon from "@material-ui/icons/Telegram";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 // import QrCode2Icon from '@mui/icons-material/QrCode2';
 
 export const data = [
   {
     icon: <SpeedIcon />,
-    pageLink: "home",
+    pageLink: "rpa/dashboard",
     linkText: "dashboard",
   },
   {
     icon: <TelegramIcon />,
-    pageLink: "filluP",
+    pageLink: "rpa/bdeposit",
     linkText: "Beneficiary deposit",
   },
   {
     icon: <AccountBalanceWalletIcon />,
-    pageLink: "users",
+    pageLink: "rpa/wtransfer",
     linkText: "Wallet Transfer",
   },
   {
@@ -30,7 +30,6 @@ export const data = [
   //   pageLink: "branch",
   //   linkText: "Generate QR Code",
   // },
- 
 ];
 
 export const getPath = (linkText) => {

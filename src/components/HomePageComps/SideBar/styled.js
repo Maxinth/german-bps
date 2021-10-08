@@ -49,6 +49,7 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0.5rem;
   ${({ col }) =>
     col &&
     css`

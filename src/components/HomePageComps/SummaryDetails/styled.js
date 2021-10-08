@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.section`
   padding: 1rem 2rem;
   background-color: ghostwhite;
-  margin-top: 2rem;
+  margin-top: 4rem;
 `;
 const RightBox = styled.ul`
   width: 100%;
