@@ -1,6 +1,7 @@
-import { Container, Heading, InnerBox } from "./styled";
+import { Container, InnerBox } from "./styled";
 import LeftSummary from "./LeftSummary";
 import RightSummary from "./RightSummary";
+import HeadingsMain from "./HeadingsMain";
 
 const SummaryDetails = (props) => {
   const { backToTableView } = props;
@@ -8,9 +9,7 @@ const SummaryDetails = (props) => {
   const { totalValue } = otherProps;
   return (
     <Container>
-      <Heading onClick={backToTableView}>Basic Subsidy Scheme</Heading>
-      <Heading as="h2">SeedCo Limited</Heading>
-      <Heading as="h3">Payment Details</Heading>
+      <HeadingsMain backToTableView={backToTableView} />
       <InnerBox>
         <LeftSummary totalVal={totalValue} />
         <RightSummary {...otherProps} />
