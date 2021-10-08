@@ -11,7 +11,7 @@ function App() {
         <SharedLayout>
           <Switch>
             <Route path="/rpa/dashboard" component={HomePage} exact />
-            <Route path="/cs/dashboard" component={CustomersDashBoard} exact />
+            <Route path="/cs" component={CustomersDashBoard} exact />
           </Switch>
         </SharedLayout>
       </AppBox>
