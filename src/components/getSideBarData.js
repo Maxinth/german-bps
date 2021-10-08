@@ -1,8 +1,8 @@
 import { data as rpaSideBarData } from "./RPA/HomePageComps/SideBar/data";
 
-export const sideBarData = (path) => {
+export const getSideBarData = (path) => {
   let data;
-  if (path === "/rpa") {
+  if (path.startsWith("/rpa/")) {
     data = rpaSideBarData;
   }
 

@@ -1,8 +1,8 @@
 import { LinksContainer } from "./styled";
 import SideBarLink from "./SideBarLink";
-import { data } from "./data";
+import PropTypes from "prop-types";
 
-const SideBarLinks = () => {
+const SideBarLinks = ({ data }) => {
   return (
     <LinksContainer>
       {data.map((item) => (
@@ -10,6 +10,10 @@ const SideBarLinks = () => {
       ))}
     </LinksContainer>
   );
+};
+
+SideBarLinks.propTypes = {
+  data: PropTypes.array,
 };
 
 export default SideBarLinks;
