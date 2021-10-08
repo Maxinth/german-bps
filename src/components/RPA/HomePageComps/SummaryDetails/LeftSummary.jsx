@@ -1,5 +1,5 @@
 import { LeftBox, DummyQrImage, Title, Amount } from "./styled";
-import dummyImg from "../../../assets/mockQrCode.PNG";
+import dummyImg from "../../../../assets/mockQrCode.PNG";
 
 const LeftSummary = ({ totalVal }) => {
   return (

@@ -1,6 +1,6 @@
 import { PageLink, LinkText } from "./styled";
 import { useDispatch } from "react-redux";
-import { toggleView } from "../../../features/SideBar";
+import { toggleView } from "../../../../features/SideBar";
 import { makeActiveLink } from "./data";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";

@@ -1,6 +1,6 @@
 import { Container, Box } from "./styled";
 import ReportsData from "./ReportsData";
-import { useVariants } from "../../motions/useVariants";
+import { useVariants } from "../../../motions/useVariants";
 // import DatePickerAndSearch from "./DatePickersAndSearch";
 import { RecordsTable } from "./TableView";
 import SummaryDetails from "./SummaryDetails";

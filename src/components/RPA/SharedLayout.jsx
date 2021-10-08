@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "./components/HomePageComps/styled";
-import SideBar from "./components/HomePageComps/SideBar";
-import Navbar from "./components/HomePageComps/Navbar";
-import BackDrop from "./components/HomePageComps/BackDrop";
+import { Container } from "./HomePageComps/styled";
+import SideBar from "./HomePageComps/SideBar";
+import Navbar from "./HomePageComps/Navbar";
+import BackDrop from "./HomePageComps/BackDrop";
 
 const SharedLayout = ({ children }) => {
   return (
