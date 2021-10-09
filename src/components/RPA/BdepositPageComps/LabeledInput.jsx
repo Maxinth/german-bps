@@ -1,17 +1,22 @@
 import TextField from "@material-ui/core/TextField";
-import { Span, Label, Box } from "./styled";
+import { Span, Text, Label, Box } from "./styled";
 import PropTypes from "prop-types";
 
-const LabeledInputAndDisplay = ({ type, labelName, value = "" }) => {
+const LabeledInputAndDisplay = ({
+  req = false,
+  type,
+  labelName,
+  value = "",
+  placeholder,
+}) => {
   return (
     <Label>
-      <Span>{labelName}</Span>
+      <Text>
+        {req && <Span>*</Span>}
+        {labelName}
+      </Text>
       {type === "input" && (
-        <TextField
-          variant="outlined"
-          value={value}
-          placeholder="Search with Reference number"
-        />
+        <TextField variant="outlined" value={value} placeholder={placeholder} />
       )}
       {type === "display" && <Box>{value}</Box>}
     </Label>
@@ -22,6 +27,7 @@ LabeledInputAndDisplay.propTypes = {
   labelName: PropTypes.string,
   value: PropTypes.string,
   type: PropTypes.string,
+  req: PropTypes.bool,
 };
 
 export default LabeledInputAndDisplay;

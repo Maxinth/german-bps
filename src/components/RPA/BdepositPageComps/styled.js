@@ -30,20 +30,22 @@ const Label = styled.label`
       & div:last-child {
         align-self: center;
         max-width: 400px;
-        margin-left: 9rem;
+        /* margin-left: 9rem; */
       }
     }
   }
 `;
 
 const Span = styled.span`
-  margin-right: 0.8rem;
+  /* margin-right: 0.8rem;
   font-weight: 500;
   min-width: 150px;
   color: grey;
   & + * {
     flex: 1;
-  }
+  } */
+  margin-right: 0.2rem;
+  color: red;
 `;
 
 const Box = styled.div`
@@ -87,7 +89,7 @@ const LineBox = styled.div`
     }
 
     & ${Label} + ${Label} {
-      & span {
+      & p {
         margin-left: 0.5rem;
       }
       & div {
@@ -112,4 +114,70 @@ const InnerBox = styled.div`
   }
 `;
 
-export { Form, Label, Span, Box, LineBox, InnerBox };
+const VoucherBox = styled.section`
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0.5rem;
+  box-shadow: 1px 2px 5px grey;
+  transition: padding 0.2s;
+  @media (min-width: 500px) {
+    padding: 4rem 2rem;
+  }
+  @media (min-width: 768px) {
+    /* max-width: 00px; */
+
+    & ${Label} p + div,
+    & ${Label} p + div > div {
+      width: 100%;
+      align-items: flex-start;
+      margin-left: unset;
+    }
+  }
+`;
+
+const Text = styled.p`
+  margin-right: 0.8rem;
+  font-weight: 500;
+  min-width: 150px;
+  color: grey;
+  & + * {
+    flex: 1;
+  }
+
+  & + div.radioGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: unset;
+    flex-direction: row;
+    & ${Label} {
+      width: 100%;
+    }
+  }
+`;
+
+const InnerVoucherBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 0 auto; */
+  /* padding: 1rem 4rem; */
+`;
+
+export {
+  InnerVoucherBox,
+  Text,
+  Form,
+  Label,
+  Span,
+  Box,
+  LineBox,
+  InnerBox,
+  VoucherBox,
+};
