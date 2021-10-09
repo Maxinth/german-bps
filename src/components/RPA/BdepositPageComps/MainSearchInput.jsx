@@ -7,6 +7,7 @@ const MainSearchInput = () => {
       fullWidth
       required
       placeholder="Search with Reference number"
+      className="mainSearch"
     />
   );
 };

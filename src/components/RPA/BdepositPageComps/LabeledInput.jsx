@@ -1,19 +1,30 @@
 import TextField from "@material-ui/core/TextField";
+import { Span, Label, Box } from "./styled";
 
-const LabeledInput = () => {
+const LabeledInputAndDisplay = ({
+  type,
+  labelName,
+  value = "",
+  isGreyedOut = false,
+}) => {
   return (
-    <>
-            <TextField
+    <Label>
+      <Span>{labelName}</Span>
+      {type === "input" && (
+        <TextField
           // label="Search with Reference number"
           variant="outlined"
-          fullWidth
-          required
+          // fullWidth
+          // required
+          value={value}
           placeholder="Search with Reference number"
           // value="summy text"
-          disabled={false}
+          disabled={isGreyedOut}
         />
-    </>
+      )}
+      {type === "display" && <Box>{value}</Box>}
+    </Label>
   );
 };
 
-export default LabeledInput;
+export default LabeledInputAndDisplay;
