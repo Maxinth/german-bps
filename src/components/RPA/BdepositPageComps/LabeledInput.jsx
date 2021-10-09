@@ -1,11 +1,18 @@
 import TextField from "@material-ui/core/TextField";
-import Container from "@material-ui/core/Container";
 
 const LabeledInput = () => {
   return (
-    <Container>
-      <TextField />
-    </Container>
+    <>
+            <TextField
+          // label="Search with Reference number"
+          variant="outlined"
+          fullWidth
+          required
+          placeholder="Search with Reference number"
+          // value="summy text"
+          disabled={false}
+        />
+    </>
   );
 };
 
