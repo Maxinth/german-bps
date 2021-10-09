@@ -1,7 +1,7 @@
 import LabeledInputAndDisplay from "./LabeledInput";
 import CashVoucherSelect from "./CashVoucherSelect";
 
-const CashDepositScreen = () => {
+const CashDepositScreen = (props) => {
   return (
     <>
       <LabeledInputAndDisplay
@@ -16,7 +16,7 @@ const CashDepositScreen = () => {
         placeholder="Deposit Amount"
         req={true}
       />
-      <CashVoucherSelect />
+      <CashVoucherSelect {...props} />
     </>
   );
 };

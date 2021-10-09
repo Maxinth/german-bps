@@ -7,3 +7,9 @@ export const data = {
   subsidyAmount: 54600,
   totalValue: 78000,
 };
+
+
+export const initPaymentObj = {
+  cash: true,
+  voucher: false,
+}
