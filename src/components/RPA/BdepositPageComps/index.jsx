@@ -1,27 +1,27 @@
 import LabeledInputAndDisplay from "./LabeledInput";
-import { Form } from "./styled";
+import { Form, InnerBox } from "./styled";
 import MainSearchInput from "./MainSearchInput";
 import Container from "@material-ui/core/Container";
+import DepositAndApprovedAmounts from "./DepositAndApprovedAmounts";
 // import {data} from './data'
+import ReferenceNoSearch from "./ReferenceNoSearch";
+import BeneficiaryNameAndNo from "./BeneficiaryNameAndNo";
 
 const BeneficiaryDeposit = () => {
   return (
     <Form noValidate autoComplete="off">
       <Container>
         <MainSearchInput />
-        <LabeledInputAndDisplay labelName="Reference Number" value="" />
-        <LabeledInputAndDisplay
-          labelName="Beneficiary Name"
-          value="Beneficiary Name"
-          isGreyedOut={true}
-          type="display"
-        />
-        <LabeledInputAndDisplay
-          labelName="Mobile Number"
-          value="Mobile Number"
-          isGreyedOut={true}
-          type="display"
-        />
+        <InnerBox>
+          <ReferenceNoSearch />
+<BeneficiaryNameAndNo />
+          <DepositAndApprovedAmounts />
+          <LabeledInputAndDisplay
+            labelName="Application Status"
+            value="APPROVED"
+            type="display"
+          />
+        </InnerBox>
       </Container>
     </Form>
   );
