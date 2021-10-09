@@ -1,27 +1,17 @@
-import LabeledInputAndDisplay from "./LabeledInput";
-import { Form, InnerBox } from "./styled";
+import { Form } from "./styled";
 import MainSearchInput from "./MainSearchInput";
 import Container from "@material-ui/core/Container";
-import DepositAndApprovedAmounts from "./DepositAndApprovedAmounts";
+import TopSection from "./TopSection";
+import VoucherDeposits from "./VoucherDeposits";
 // import {data} from './data'
-import ReferenceNoSearch from "./ReferenceNoSearch";
-import BeneficiaryNameAndNo from "./BeneficiaryNameAndNo";
 
 const BeneficiaryDeposit = () => {
   return (
     <Form noValidate autoComplete="off">
       <Container>
         <MainSearchInput />
-        <InnerBox>
-          <ReferenceNoSearch />
-<BeneficiaryNameAndNo />
-          <DepositAndApprovedAmounts />
-          <LabeledInputAndDisplay
-            labelName="Application Status"
-            value="APPROVED"
-            type="display"
-          />
-        </InnerBox>
+        <TopSection />
+        <VoucherDeposits />
       </Container>
     </Form>
   );
