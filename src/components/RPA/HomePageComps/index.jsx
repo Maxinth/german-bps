@@ -21,7 +21,7 @@ const HomePage = () => {
   const { txnData, tableData } = useGetDashBoardData();
   return (
     <Container variants={pageVariant} {...variantProps}>
-      {!showDetail && <ReportsData />}
+      {!showDetail && <ReportsData data={txnData} />}
 
       <Box>
         {!showDetail && (
@@ -29,6 +29,7 @@ const HomePage = () => {
             showDetail={showDetailsView}
             getItem={getItemClicked}
             clickShow={true}
+            DATA={tableData}
           />
         )}
         {showDetail && (
