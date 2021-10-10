@@ -4,7 +4,7 @@ import Report from "./Report";
 import PropTypes from "prop-types";
 // import Loader from '../../../Loaders'
 
-const ReportsData = ({ data = [], isLoading }) => {
+const ReportsData = ({ data = [] }) => {
   return (
     <Container>
       {data.map((item) => (

@@ -12,10 +12,10 @@ const useGetDashBoardData = () => {
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
-        const { reportsData, tableRecords } = data;
+        const { txnReports, tableRecords } = data;
         setIsLoading(false);
         setTableData(tableRecords);
-        setTxnData(reportsData);
+        setTxnData(txnReports);
       });
   };
 

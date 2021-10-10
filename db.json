@@ -1,7 +1,7 @@
 {
   "rpa-dboard": {
     "userName": "SeedCo Taris Robert",
-    "reportsData": [
+    "txnReports": [
       {
         "title": "Wallet Balance",
         "amount": "80,000,000.00"
