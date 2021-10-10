@@ -1,6 +1,6 @@
 import LabeledInputAndDisplay from "./LabeledInput";
 
-const VoucherDepositScreen = () => {
+const VoucherDepositScreen = ({ deposit = 0 }) => {
   return (
     <>
       <LabeledInputAndDisplay
@@ -18,7 +18,7 @@ const VoucherDepositScreen = () => {
       <LabeledInputAndDisplay
         type="display"
         labelName="Voucher Value"
-        value="$ 23,400"
+        value={`$ ${deposit}`}
       />
       <LabeledInputAndDisplay
         type="input"

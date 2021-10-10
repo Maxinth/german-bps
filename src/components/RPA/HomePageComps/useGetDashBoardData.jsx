@@ -16,7 +16,7 @@ const useGetDashBoardData = () => {
         setIsLoading(false);
         setTableData(tableRecords);
         setTxnData(txnReports);
-
+        console.log("doFetch");
         // const refNo = "FKE20200112";
         // const tableItem = tableRecords.find((item) => item.refNo === refNo);
         // console.log(tableItem);

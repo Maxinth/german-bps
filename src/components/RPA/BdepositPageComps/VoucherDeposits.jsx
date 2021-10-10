@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import VoucherDepositScreen from "./VoucherDepositScreen";
 import { useState } from "react";
 
-const VoucherDeposits = () => {
+const VoucherDeposits = ({ depositReceived }) => {
   const [paymentType, setPaymentType] = useState("cash");
   const getPaymentType = (id) => setPaymentType(id);
   return (
@@ -16,7 +16,9 @@ const VoucherDeposits = () => {
             selectedOption={paymentType}
           />
         )}
-        {paymentType === "voucher" && <VoucherDepositScreen />}
+        {paymentType === "voucher" && (
+          <VoucherDepositScreen deposit={depositReceived} />
+        )}
         <Button variant="contained" color="primary">
           Process Deposit
         </Button>

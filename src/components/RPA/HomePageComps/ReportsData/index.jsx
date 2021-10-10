@@ -6,11 +6,15 @@ import PropTypes from "prop-types";
 
 const ReportsData = ({ data = [] }) => {
   return (
-    <Container>
-      {data.map((item) => (
-        <Report key={item.title} {...item} />
-      ))}
-    </Container>
+    <>
+      {data.length && (
+        <Container>
+          {data.map((item) => (
+            <Report key={item.title} {...item} />
+          ))}
+        </Container>
+      )}
+    </>
   );
 };
 
