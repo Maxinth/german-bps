@@ -8,6 +8,7 @@ const LabeledInputAndDisplay = ({
   labelName,
   value = "",
   placeholder,
+  handleChange,
 }) => {
   return (
     <Label>
@@ -16,7 +17,12 @@ const LabeledInputAndDisplay = ({
         {labelName}
       </Text>
       {type === "input" && (
-        <TextField variant="outlined" value={value} placeholder={placeholder} />
+        <TextField
+          variant="outlined"
+          value={value}
+          placeholder={placeholder}
+          onChange={(e) => handleChange(e.target.value)}
+        />
       )}
       {type === "display" && <Box>{value}</Box>}
     </Label>

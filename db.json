@@ -23,7 +23,8 @@
         "walletDetails": "Farrow Farming Society",
         "depositReceived": 15000,
         "subsidyAmount": 35000,
-        "totalValue": 40000
+        "totalValue": 40000,
+        "applicationStatus": "PROCESSED"
       },
       {
         "id": 2,
@@ -32,7 +33,8 @@
         "walletDetails": "ICODE4FOOD",
         "depositReceived": 23400,
         "subsidyAmount": 54600,
-        "totalValue": 78000
+        "totalValue": 78000,
+        "applicationStatus": "APPROVED"
       },
       {
         "id": 3,
@@ -41,7 +43,8 @@
         "walletDetails": "MRHAMMED",
         "depositReceived": 10000,
         "subsidyAmount": 54600,
-        "totalValue": 64600
+        "totalValue": 64600,
+        "applicationStatus": "DISBURSED"
       },
       {
         "id": 4,
@@ -50,7 +53,8 @@
         "walletDetails": "OLAOLUWA",
         "depositReceived": 12000,
         "subsidyAmount": 55000,
-        "totalValue": 67000
+        "totalValue": 67000,
+        "applicationStatus": "APPROVED"
       },
       {
         "id": 5,
@@ -59,7 +63,8 @@
         "walletDetails": "JIDE- CODA BLACK",
         "depositReceived": 9000,
         "subsidyAmount": 30000,
-        "totalValue": 39000
+        "totalValue": 39000,
+        "applicationStatus": "PROCESSED"
       }
     ]
   }
