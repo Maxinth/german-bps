@@ -2,16 +2,18 @@ import { useState, useEffect } from "react";
 
 const useGetDashBoardData = () => {
   const [txnData, setTxnData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [tableData, setTableData] = useState([]);
 
   const getRpaHomeData = () => {
     //GET
-
+    setIsLoading(true);
     fetch("http://localhost:4000/rpa-dboard")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const { reportsData, tableRecords } = data;
+        setIsLoading(false);
         setTableData(tableRecords);
         setTxnData(reportsData);
       });
@@ -27,6 +29,7 @@ const useGetDashBoardData = () => {
     tableData,
     setTableData,
     setTxnData,
+    isLoading,
   };
 };
 

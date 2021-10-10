@@ -2,8 +2,9 @@ import { Container } from "./styled";
 import Report from "./Report";
 // import { data } from "./data";
 import PropTypes from "prop-types";
+// import Loader from '../../../Loaders'
 
-const ReportsData = ({ data = [] }) => {
+const ReportsData = ({ data = [], isLoading }) => {
   return (
     <Container>
       {data.map((item) => (

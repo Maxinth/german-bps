@@ -18,10 +18,10 @@ const HomePage = () => {
   const showDetailsView = () => setShowDetail(true);
   const revertToInitialView = () => setShowDetail(false);
 
-  const { txnData, tableData } = useGetDashBoardData();
+  const { txnData, tableData, isLoading } = useGetDashBoardData();
   return (
     <Container variants={pageVariant} {...variantProps}>
-      {!showDetail && <ReportsData data={txnData} />}
+      {!showDetail && <ReportsData data={txnData} isLoading={isLoading} />}
 
       <Box>
         {!showDetail && (
