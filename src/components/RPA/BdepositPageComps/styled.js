@@ -103,6 +103,7 @@ const LineBox = styled.div`
 const InnerBox = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+  /* margin-bottom: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,8 +167,19 @@ const InnerVoucherBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* margin: 0 auto; */
-  /* padding: 1rem 4rem; */
+  text-align: center;
+  > * {
+    align-self: center;
+  }
+
+  & button {
+    margin-top: 2rem;
+    align-self: center;
+  }
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 900px;
+  }
 `;
 
 export {

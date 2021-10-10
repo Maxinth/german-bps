@@ -4,6 +4,14 @@ const Container = styled.section`
   padding: 1rem 2rem;
   background-color: ghostwhite;
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & button {
+    margin-top: 3rem;
+  }
 `;
 const RightBox = styled.ul`
   width: 100%;
