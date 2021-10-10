@@ -1,21 +1,27 @@
 import { LineBox } from "./styled";
 import LabeledInputAndDisplay from "./LabeledInput";
+import PropTypes from "prop-types";
 
-const DepositAndApprovedAmounts = () => {
+const DepositAndApprovedAmounts = ({ deposit = 0, approvedAmount = 0 }) => {
   return (
     <LineBox>
       <LabeledInputAndDisplay
         labelName="Amount to Deposit"
-        value="$ 23,4000"
+        value={`$ ${deposit}`}
         type="display"
       />
       <LabeledInputAndDisplay
         labelName="Approved Amount"
-        value="$78, 000"
+        value={`$ ${approvedAmount}`}
         type="display"
       />
     </LineBox>
   );
+};
+
+DepositAndApprovedAmounts.propTypes = {
+  deposit: PropTypes.number,
+  approvedAmount: PropTypes.number,
 };
 
 export default DepositAndApprovedAmounts;

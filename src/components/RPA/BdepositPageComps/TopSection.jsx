@@ -5,7 +5,10 @@ import BeneficiaryNameAndNo from "./BeneficiaryNameAndNo";
 import ApplicationStatus from "./ApplicationStatus";
 import PropTypes from "prop-types";
 
-const TopSection = ({ refNo, getVal, handleSearch }) => {
+const TopSection = (props) => {
+  const { refNo, getVal, handleSearch, ...detailsProps } = props;
+  const { applicationStatus, depositReceived, subsidyAmount, walletDetails } =
+    detailsProps;
   return (
     <InnerBox>
       <ReferenceNoSearch
@@ -13,9 +16,12 @@ const TopSection = ({ refNo, getVal, handleSearch }) => {
         getVal={getVal}
         handleSearch={handleSearch}
       />
-      <BeneficiaryNameAndNo />
-      <DepositAndApprovedAmounts />
-      <ApplicationStatus />
+      <BeneficiaryNameAndNo name={walletDetails} />
+      <DepositAndApprovedAmounts
+        deposit={depositReceived}
+        approvedAmount={subsidyAmount}
+      />
+      <ApplicationStatus status={applicationStatus} />
     </InnerBox>
   );
 };

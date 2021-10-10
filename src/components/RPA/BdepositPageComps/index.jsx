@@ -8,7 +8,7 @@ import { useState } from "react";
 import useFetchAllDetails from "../HomePageComps/useGetDashBoardData";
 
 const BeneficiaryDeposit = () => {
-  const [autoPopulate, setAutoPopulate] = useState({});
+  const [detailsBasedOnSearchItem, setDetailsBasedOnSearchItem] = useState({});
   const [refNo, setRefNo] = useState("");
   const { tableData } = useFetchAllDetails();
   const singleDetail = tableData.find((item) => item.refNo === refNo);
@@ -16,7 +16,7 @@ const BeneficiaryDeposit = () => {
   const getRefNoEntered = (val) => setRefNo(val);
   const handleRefSearch = () => {
     console.log(singleDetail);
-    // setAutoPopulate(singleDetail)
+    setDetailsBasedOnSearchItem(singleDetail);
   };
   return (
     <Form noValidate autoComplete="off">
@@ -25,10 +25,10 @@ const BeneficiaryDeposit = () => {
         <TopSection
           refNo={refNo}
           getVal={getRefNoEntered}
-          {...autoPopulate}
+          {...detailsBasedOnSearchItem}
           handleSearch={handleRefSearch}
         />
-        <VoucherDeposits />
+        <VoucherDeposits {...detailsBasedOnSearchItem} />
       </Container>
     </Form>
   );
