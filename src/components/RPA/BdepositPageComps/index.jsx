@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import TopSection from "./TopSection";
 import VoucherDeposits from "./VoucherDeposits";
 // import {data} from './data'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useFetchAllDetails from "../HomePageComps/useGetDashBoardData";
 
 const BeneficiaryDeposit = () => {
